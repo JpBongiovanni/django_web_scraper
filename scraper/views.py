@@ -72,5 +72,5 @@ def smrpg_stats(request):
     # df = pd.DataFrame({'Stats': stat_title, 'Stat Value': stat_value})
 
     # df = df.to_dict()
-
+    print(load_stats)
     return JsonResponse(load_stats, safe=False)
