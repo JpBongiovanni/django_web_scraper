@@ -69,6 +69,11 @@ def smrpg_stats(request):
     stat_dict = json.dumps(stat_dict)
     load_stats = json.loads(stat_dict)
 
+    all_text.clear()
+    split_text.clear()
+    stat_title.clear()
+    stat_value.clear()
+
     # df = pd.DataFrame({'Stats': stat_title, 'Stat Value': stat_value})
 
     # df = df.to_dict()
