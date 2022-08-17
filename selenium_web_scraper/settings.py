@@ -9,10 +9,6 @@ from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
-
-
 SECRET_KEY = os.getenv('SECRET_KEY', '') or config('SECRET_KEY')
 
 DEBUG = True

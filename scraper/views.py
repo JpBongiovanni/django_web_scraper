@@ -2,6 +2,7 @@
 from django.http import HttpResponse, JsonResponse
 import os
 import json
+from decouple import config
 import pandas as pd
 from pandas import read_json
 from selenium import webdriver
@@ -11,7 +12,7 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
-driver = webdriver.Chrome(executable_path=r'C:/selenium_drivers/chromedriver.exe' or os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
+driver = webdriver.Chrome(executable_path=r'C:/selenium_drivers/chromedriver.exe' or os.environ.get("CHROMEDRIVER_PATH") or config('CHROMEDRIVER_PATH'), chrome_options=options)
 
 
 def index(request):
