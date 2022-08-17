@@ -1,0 +1,1 @@
+web: gunicorn selenium_web_scraper.wsgi
