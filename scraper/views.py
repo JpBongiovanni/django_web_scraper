@@ -24,8 +24,9 @@ driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), c
 # options.add_argument('--disable-gpu')
 # driver = webdriver.Chrome(executable_path=r'C:/selenium_drivers/chromedriver.exe' or os.environ.get("CHROMEDRIVER_PATH") or config('CHROMEDRIVER_PATH'), chrome_options=options)
 
-
 def index(request):
+    return HttpResponse("Hello World!")
+def smrpg_stats(request):
     # os.environ['PATH'] += r"C:/selenium_drivers/chromedriver"
 
     # options = Options()
