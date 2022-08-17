@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
-driver = webdriver.Chrome(executable_path=r'C:/selenium_drivers/chromedriver.exe', chrome_options=options)
+driver = webdriver.Chrome(executable_path=r'C:/selenium_drivers/chromedriver.exe' or os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
 
 
 def index(request):
