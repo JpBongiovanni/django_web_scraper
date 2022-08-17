@@ -26,7 +26,7 @@ driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), c
 
 
 def index(request):
-    os.environ['PATH'] += r"C:/selenium_drivers/chromedriver"
+    # os.environ['PATH'] += r"C:/selenium_drivers/chromedriver"
 
     # options = Options()
     # options.headless = True
