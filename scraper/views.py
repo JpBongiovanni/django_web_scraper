@@ -27,6 +27,10 @@ driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), c
 def index(request):
     return HttpResponse("Hello World!")
 def smrpg_stats(request):
+    stat_dict = {}
+    load_stats = {}
+    stat_dict.clear()
+    load_stats.clear()
     # os.environ['PATH'] += r"C:/selenium_drivers/chromedriver"
 
     # options = Options()
@@ -77,5 +81,5 @@ def smrpg_stats(request):
     # df = pd.DataFrame({'Stats': stat_title, 'Stat Value': stat_value})
 
     # df = df.to_dict()
-    print(load_stats)
+    
     return JsonResponse(load_stats, safe=False)
