@@ -9,12 +9,21 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-options = Options()
-options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") or config("GOOGLE_CHROME_BIN")
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')
+op = webdriver.ChromeOptions()
+op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+op.add_argument("--headless")
+op.add_argument("--no-sandbox")
+op.add_argument("--disable-dev-sh-usage")
+
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
+
+
+# options = Options()
+# options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") or config("GOOGLE_CHROME_BIN")
+# options.add_argument('--headless')
+# options.add_argument('--disable-gpu')
 # driver = webdriver.Chrome(executable_path=r'C:/selenium_drivers/chromedriver.exe' or os.environ.get("CHROMEDRIVER_PATH") or config('CHROMEDRIVER_PATH'), chrome_options=options)
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
+
 
 def index(request):
     os.environ['PATH'] += r"C:/selenium_drivers/chromedriver"
